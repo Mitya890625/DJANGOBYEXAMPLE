@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "blog"
+version = "0.1.0"
+description = ""
+authors = ["mitya <dmitriyzhdan23@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "3"
+django-taggit = "1.2.0"
+markdown = "3.2.1"
+psycopg2-binary = "2.8.4"
+autoflake = "^2.3.0"
+isort = "^5.13.2"
+black = "^24.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

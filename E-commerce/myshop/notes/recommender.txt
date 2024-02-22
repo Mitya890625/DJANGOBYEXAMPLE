@@ -1,0 +1,5 @@
+Recommender engigine works by following principle:
+    in function bought_product we buy pair of products and store results in redis
+    for example: we are are buing product_1 with product_2 3 times and with product_3 2 times
+    function suggest_products_for will show us list of recommended products in order 
+    of quantity products which were bought with product number 1
