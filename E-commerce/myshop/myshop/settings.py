@@ -1,5 +1,9 @@
 import os
+import braintree
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -9,10 +13,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-%wtiv=oq4#^*@@-2x=tk1e-h$8^%hsac^^r!&9wk(=s5#ne+7'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -133,11 +137,10 @@ REDIS_PORT = 6379
 REDIS_DB = 1
 
 # Braintree settings
-BRAINTREE_MERCHANT_ID = 'ws63mwfhkh9d64zr'  # Merchant ID
-BRAINTREE_PUBLIC_KEY = 'j3gng5p7gfm7q7wj'   # Public Key
-BRAINTREE_PRIVATE_KEY = 'a1b4dcb975cce1061d11440606a88355'  # Private key
+BRAINTREE_MERCHANT_ID = os.getenv("BRAINTREE_MERCHANT_ID")
+BRAINTREE_PUBLIC_KEY = os.getenv("BRAINTREE_PUBLIC_KEY")
+BRAINTREE_PRIVATE_KEY = os.getenv("BRAINTREE_PRIVATE_KEY")
 
-import braintree
 
 BRAINTREE_CONF = braintree.Configuration(
     braintree.Environment.Sandbox,
